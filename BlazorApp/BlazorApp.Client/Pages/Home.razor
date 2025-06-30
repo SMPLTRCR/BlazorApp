@@ -1,0 +1,147 @@
+﻿@page "/"
+
+<PageTitle>BMW E46 M3</PageTitle>
+
+<body>
+  <div class="dss">Opis i specyfikacja pojazdu</div>
+  <span>Opis</span>
+  <div class="text">  
+          
+    <p>BMW M3 E46 to po prostu legenda. Ikona lat 2000. Ostatnia prawdziwa M3 z wolnossącą rzędową szóstką i klasyczną linią nadwozia bez przesadnej cyfryzacji. Auto stworzone dla kierowcy, nie dla komputera.
+
+Pod maską masz tam S54B32 wysokoobrotowe N/A R6, które kręci się aż do 8000 obrotów, a dźwięk, jaki wydaje przy 7,5k rpm, to po prostu symfonia mechaniki. Żadnych turbin, żadnych ustępstw czysty mechaniczny ogień. Fabrycznie 343 konie, ale to konie z charakterem, nie jakieś dmuchane cyfry z folderu marketingowego.
+
+Przyspieszenie? 0 do 100 km/h w około 5 sekund. Ale to nie liczby robią wrażenie, tylko sposób, w jaki to auto to robi. Masz moment, że wciska cię w fotel, a silnik ciągnie do góry jak szalony, a przy tym brzmi jak torowe auto.
+
+Napęd klasycznie na tył, jak Bóg przykazał. Szpera LSD to standard, więc możesz ładnie bokiem pójść, ale też trzymać tor jazdy na wyjściu z zakrętu jak po sznurku. Zawieszenie twarde, ale mega responsywne. To nie auto do jazdy po dziurawych drogach, tylko do jazdy dla przyjemności.
+
+W środku? Surowo, ale z klasą. Skóra, alcantara, kubełki z opcją regulacji boczków jak ktoś wsiądzie pierwszy raz, to czuje, że siedzi w czymś poważnym. Żadnych wielkich ekranów, ale za to masz klimat i analogowe wskaźniki, które mówią ci prawdę bez filtrów.
+
+SMG II? Temat kontrowersyjny albo pokochasz, albo znienawidzisz. Ale ręczna skrzynia to złoto krótkie przełożenia, twardy lewarek i pełna kontrola.
+
+E46 M3 to już nie tylko auto to klasyk, inwestycja i styl życia. Auto, które daje radość z jazdy i pokazuje, czym naprawdę jest „Freude am Fahren”.</p>
+<div class="bodyimg"><img src=img/exterior.jpg width="480" height="312"></div>
+</div>
+<div class="spec">Specyfikacja</div>
+<div class="engine">
+  <!--<b>Silnik:</b>
+    
+    <ul>
+      <li>Kod silnika: <a href="https://pl.wikipedia.org/wiki/BMW_S54">S54B32 </a></li>
+      <li>Typ: Rzędowy, 6-cylindrowy, wolnossący (N/A)</li>
+      <li>Pojemność: 3246 cm³</li>
+      <li>Średnica cylindra x skok tłoka: 87.0 mm na 91.0 mm</li>
+      <li>Liczba zaworów: 24 (4 na cylinder)</li>
+      <li>Rozrząd: DOHC z systemem zmiennych faz VANOS</li>
+      <li>Materiał bloku: żeliwo grafitowe</li>
+      <li>Materiał głowicy: aluminium</li>
+      <li>Moc maksymalna: 343 KM (252 kW) przy 7900 obr/min</li>
+      <li>Moment obrotowy: 365 Nm przy 4900 obr/min</li>
+      <li>Stopień sprężania: 11,5:1</li>
+      <li>Redline: 8000 obr/min</li>
+    </ul>
+-->
+        
+        <button @onclick="PokazDane">
+            @((pokaz ? "Ukryj dane silnika" : "Pokaż dane silnika"))
+        </button>
+
+        @if (pokaz)
+        {
+            <ul>
+                <li>Kod silnika: <a href="https://pl.wikipedia.org/wiki/BMW_S54" target="_blank">S54B32</a></li>
+                <li>Typ: Rzędowy, 6-cylindrowy, wolnossący (N/A)</li>
+                <li>Pojemność: 3246 cm³</li>
+                <li>Średnica cylindra x skok tłoka: 87.0 mm na 91.0 mm</li>
+                <li>Liczba zaworów: 24 (4 na cylinder)</li>
+                <li>Rozrząd: DOHC z systemem zmiennych faz VANOS</li>
+                <li>Materiał bloku: żeliwo grafitowe</li>
+                <li>Materiał głowicy: aluminium</li>
+                <li>Moc maksymalna: 343 KM (252 kW) przy 7900 obr/min</li>
+                <li>Moment obrotowy: 365 Nm przy 4900 obr/min</li>
+                <li>Stopień sprężania: 11,5:1</li>
+                <li>Redline: 8000 obr/min</li>
+            </ul>
+        }
+
+        @code {
+            private bool pokaz = false;
+
+            private void PokazDane()
+            {
+                pokaz = !pokaz;
+            }
+        }
+    </div>
+<div class="container">
+    <div class="left">
+        <div class="uklad">
+            <b>Układ napędowy:</b>
+            <ul>
+                <li>Napęd: tylnonapędowy (RWD)</li>
+                <li>
+                    Skrzynie biegów:
+                    <ul>
+                        <li>6-biegowa manualna Getrag</li>
+                        <li>6-biegowa zautomatyzowana sekwencyjna SMG II</li>
+                    </ul>
+                </li>
+                <li>Dyferencjał: mechaniczny LSD (25%)</li>
+            </ul>
+        </div>
+        <div class="osiagi">
+            <b>Osiągi:</b>
+            <ul>
+                <li>0 do 100 km/h: ~5.0 s (manual), ~5.2 s (SMG)</li>
+                <li>Prędkość maksymalna: 250 km/h (ograniczona elektronicznie)</li>
+                <li>Stosunek mocy do masy: ~4,7 kg/KM</li>
+                <li>Masa własna: ~1495 kg (manual), ~1520 kg (SMG)</li>
+            </ul>
+        </div>
+        <div class="zawieszenie">
+            <b>Zawieszenie i układ kierowniczy:</b>
+            <ul>
+                <li>Przód: kolumny MacPhersona, stabilizator</li>
+                <li>Tył: wielowahaczowe (multi-link), stabilizator</li>
+                <li>Amortyzatory: gazowe, sportowe</li>
+                <li>Układ kierowniczy: hydrauliczny ze zmiennym wspomaganiem M</li>
+            </ul>
+        </div>
+    </div>
+    <div class="right">
+        <div class="hamulce">
+            <b>Hamulce:</b>
+            <ul>
+                <li>Przód: tarcze wentylowane 325 mm</li>
+                <li>Tył: tarcze wentylowane 328 mm</li>
+                <li>Systemy: ABS, DSC, CBC</li>
+            </ul>
+        </div>
+        <div class="nadwozie">
+            <b>Nadwozie i wymiary:</b>
+            <ul>
+                <li>Typ: coupe lub kabriolet</li>
+                <li>Długość: 4491 mm</li>
+                <li>Szerokość: 1781 mm</li>
+                <li>Wysokość: 1372 mm</li>
+                <li>Rozstaw osi: 2731 mm</li>
+                <li>Rozstaw kół: przód 1513 mm / tył 1527 mm</li>
+                <li>Pojemność bagażnika: 410 l (coupe)</li>
+                <li>Zbiornik paliwa: 63 l</li>
+            </ul>
+        </div>
+        <div class="wnetrze">
+            <b>Wnętrze i wyposażenie:</b>
+            <ul>
+                <li>Fotele sportowe z opcjonalną regulacją boczków i podgrzewaniem</li>
+                <li>Klimatyzacja automatyczna dwustrefowa</li>
+                <li>Tapicerka: skóra Nappa lub alcantara (opcjonalnie)</li>
+                <li>System audio Harman/Kardon (opcja)</li>
+                <li>Komputer pokładowy z wyświetlaczem LCD</li>
+                <li>Analogowe zegary, bez nadmiaru elektroniki</li>
+            </ul>
+        </div>
+    </div>
+    <div class="intimg"><img src=img/interior.jpeg width="650" height="312"></div>
+</div>
+</body>
